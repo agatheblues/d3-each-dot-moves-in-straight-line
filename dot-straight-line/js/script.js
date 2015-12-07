@@ -1,6 +1,8 @@
-var w = 400;
+var padding = 10;
+var w = document.documentElement.clientHeight-150;
 var dataset = [10,10,10,10,10,10,10,10];
 var spacing = 2 * Math.PI / 16;
+var transitionDuration = 2000;
 
 var svg = d3.select('#chart').append('svg')
                                 .attr('width',w)
@@ -21,33 +23,33 @@ var lineContainer = svg.selectAll('g')
 
 var line = lineContainer.append('line')
                             .attr('y1',0)
-                            .attr('x1',10)
+                            .attr('x1',padding)
                             .attr('y2',0)
-                            .attr('x2',w-10);
+                            .attr('x2',w-padding);
 
 var circle = lineContainer.append('circle')
                             .attr('r',10)
-                            .attr('cx',10)
+                            .attr('cx',padding)
                             .attr('cy',0);
 
 var animateCircle = function(selection){
 
                     selection.transition()
-                            .duration(5000)
-                            .ease('sin')
-                            // .delay(
-                            //     function(d,i){
-                            //         return (i-1)*(10000/8);
-                            // })
-                            .attr('cx',w-10)
+                                .duration(transitionDuration)
+                                .ease('sin-in-out')
+                                .delay(
+                                    function(d,i){
+                                        return i*(transitionDuration/(dataset.length));
+                                })
+                                .attr('cx',w-padding)
                             .transition()
-                            .duration(5000)
-                            .ease('sin')
-                            .attr('cx',10)
-                            .each('end',function(d,i){
-                                if (i===0){
-                                    animateCircle(selection);
-                                }
+                                .duration(transitionDuration)
+                                .ease('sin-in-out')
+                                .attr('cx',padding)
+                                .each('end',function(d,i){
+                                    if (i===0){
+                                        animateCircle(selection);
+                                    }
                             });
 };
 
