@@ -1,0 +1,12 @@
+svg {
+    margin : auto;
+    display: block;
+}
+
+line {
+    stroke: black;
+}
+
+circle {
+    fill: black;
+}
