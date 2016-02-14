@@ -9,3 +9,6 @@ The curve on the right shows the transition function applied to the circles. It'
 
 # The slider
 You can change the number of circles by moving the slider from 1 to 50.
+
+# How does it look ?
+![Alt text](https://github.com/agatheblues/d3-each-dot-moves-in-straight-line/blob/master/screenshot_each-dot-moves-in-straight-line.png "Screenshot of the circles moving and the curve")
