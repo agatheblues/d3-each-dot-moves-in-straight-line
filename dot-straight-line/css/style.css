@@ -1,13 +1,80 @@
+body {
+    margin:0;
+    width: 100%;
+    height: 100%;
+    background-color:#3F3C3C;
+    font-family: Open Sans;
+    font-weight:300;
+    color: #BFBFBF;
+    font-size: 14px;
+}
+
 svg {
-    margin : auto;
+
     display: block;
-    margin-top: 5%;
 }
 
-line {
-    stroke: black;
+#straightCircles0 {
+    fill:#1F9FA8;
 }
 
-circle {
-    fill: black;
+/* Curve */
+#curve {
+  fill: none;
+  stroke: #F4F1BB;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #BFBFBF;
+    shape-rendering: crispEdges; /*The shape-rendering property is an SVG attribute, used here to make sure our axis and its tick mark lines are pixel-perfect.*/
+}
+
+.axis text {
+    fill: #BFBFBF;
+    font-size: 10px;
+}
+
+#curveContainer circle {
+    fill :#1F9FA8;
+}
+
+#dot {
+    r: 10px;
+}
+
+/*Slider*/
+.input-range {
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 8px;
+    height: 4px;
+    border: 1px solid #BFBFBF;
+    background-color: #fff;
+}
+
+.input-range::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: #ED6A5A;
+	width: 15px;
+	height: 15px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.content-container {
+    text-align: center;
+}
+
+#range-container {
+    width: 15%;
+    text-align: center;
+    display: inline-block;
+}
+
+.label-container {
+    margin : 5px 0px 5px 0px;
 }
